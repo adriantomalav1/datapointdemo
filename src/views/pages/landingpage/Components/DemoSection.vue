@@ -3,7 +3,7 @@ import { ref, onMounted } from 'vue';
 import { useIspValue } from '@/utils/useIspValue';
 import SvgSprite from '@/components/shared/SvgSprite.vue';
 // assets
-// import imageDemo1 from '@/assets/images/landing/feature-figma.png';
+import imageDemo1 from '@/assets/images/landing/feature-figma.png';
 import imageDemo2 from '@/assets/images/landing/feature-components.png';
 import imageDemo3 from '@/assets/images/landing/feature-documentation.png';
 

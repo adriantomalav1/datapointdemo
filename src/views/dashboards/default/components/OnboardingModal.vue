@@ -360,12 +360,6 @@
 
   export default {
     name: 'OnboardingModal',
-    props: {
-      onFinish: {
-        type: Function,
-        required: true
-      }
-    },
     data() {
       return {
         accounts: [
