@@ -574,7 +574,7 @@
     width: 100vw;
     max-height: 100vh;
     max-width: 100vw;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 1500;
