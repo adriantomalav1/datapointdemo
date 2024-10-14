@@ -12,6 +12,11 @@ const MainRoutes = {
       component: () => import('@/views/dashboards/default/DefaultDashboard.vue')
     },
     {
+      name: 'Deals',
+      path: '/deals',
+      component: () => import('@/views/apps/customer/CustomerList.vue')
+    },
+    {
       name: 'Analytics',
       path: '/dashboard/analytics',
       component: () => import('@/views/dashboards/analytics/AnalyticsDashboard.vue')

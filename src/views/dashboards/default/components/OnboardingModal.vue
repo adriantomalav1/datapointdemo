@@ -499,6 +499,9 @@
       },
     },
     emits: ['onboarding-completed'],
+    mounted() {
+      document.documentElement.style.overflow = 'hidden';
+    },
     methods: {
       removeDSP(index) {
         this.dsps.splice(index, 1)
@@ -563,7 +566,7 @@
     },
   }
   </script>
-  
+
   <style scoped>
   .main-container {
     display: flex;
@@ -576,7 +579,7 @@
     left: 0;
     z-index: 1500;
   }
-  
+
   .backdrop {
     width: 100vw;
     height: 100vh;
@@ -586,29 +589,29 @@
     align-items: center;
     height: 100vh;
   }
-  
+
   .steps {
     width: 100%;
     height: 5px;
     display: flex;
     margin-bottom: 20px;
   }
-  
+
   .step-child {
     flex-grow: 1;
     margin-right: 5px;
     background-color: lightgray;
     border-radius: 5px;
   }
-  
+
   .step-child:last-child {
     margin-right: 0px;
   }
-  
+
   .step-child.active {
     background-color: rgb(var(--v-theme-primary));;
   }
-  
+
   .image-container {
     background-color: rgb(var(--v-theme-primary));;
     width: -webkit-fill-available;
@@ -618,7 +621,7 @@
     justify-content: center;
     align-items: center;
   }
-  
+
   .onboarding-container {
     width: 40%;
     min-width: 600px;
@@ -627,6 +630,8 @@
     padding: 25px;
     background-color: rgb(var(--v-theme-containerBg));
     border-radius: 12px;
+    overflow: auto;
+    max-height: 95vh;
   }
 
   .onboarding-header {
@@ -647,31 +652,31 @@
     background-color: rgb(var(--v-theme-background));
     padding: 20px;
   }
-  
+
   .account-card:hover {
     border: 3px solid rgb(var(--v-theme-primary));;
     cursor: pointer;
   }
-  
+
   .account-card.selected {
     background-color: #0d71fd0d;
     border: 3px solid rgb(var(--v-theme-primary));;
   }
-  
+
   .account-card-title {
     font-weight: 600;
     margin-bottom: 6px;
   }
-  
+
   .account-card-benefits {
     padding-left: 14px;
     font-size: 13px;
   }
-  
+
   .account-card-footer {
     width: 100%;
   }
-  
+
   .account-card-button {
     padding: 8px;
     width: 150px;
@@ -682,18 +687,18 @@
     background-color: rgb(var(--v-theme-primary));;
     color: white;
   }
-  
+
   .account-card-button:hover {
     cursor: pointer;
     /* background-color: #035db8; */
   }
-  
+
   .account-card-learn-more {
     text-align: center;
     margin: 4px auto;
     font-size: 10px;
   }
-  
+
   .actions {
     display: flex;
     width: calc(100vw);
@@ -705,31 +710,31 @@
     background-color: rgb(var(--v-theme-primary));;
     display: none;
   }
-  
+
   .actions-right {
     width: fit-content;
     display: flex;
     flex-direction: row-reverse;
     width: 90px;
   }
-  
+
   .actions-left {
     width: fit-content;
     display: flex;
     width: 90px;
   }
-  
+
   .actions-center {
     color: white;
     width: -webkit-fill-available;
   }
-  
+
   .action-btn-container {
     width: 100%;
     display: flex;
     margin: 40px auto 20px auto;
   }
-  
+
   .action-btn {
     background-color: rgb(var(--v-theme-primary));;
     color: white;
@@ -738,16 +743,16 @@
     border-radius: 7px;
     font-weight: 500;
   }
-  
+
   .action-btn:hover {
     color: rgb(var(--v-theme-primary));;
     background-color: white;
   }
-  
+
   /* .action-btn:hover {
     background-color: #041e41;
   } */
-  
+
   .action-btn-back {
     font-weight: 400;
     color: grey;
@@ -756,29 +761,29 @@
     font-size: 13px;
     display: flex;
   }
-  
+
   .actions-steps {
     width: fit-content;
     margin: 7px auto;
   }
-  
+
   .step-description-separator {
     margin: 0 10px;
   }
-  
+
   .step-description {
     color: white;
     font-size: 14px;
     font-weight: 200;
     cursor: pointer;
   }
-  
+
   .step-description.active {
     font-size: 16px;
     font-weight: 600;
     cursor: default;
   }
-  
+
   .add-icon-container {
     width: 30px;
     height: 30px;
@@ -792,21 +797,21 @@
     background-color: white;
     cursor: pointer;
   }
-  
+
   .add-advertiser {
     text-decoration: underline;
     color: grey;
     margin: 9px;
     cursor: pointer;
   }
-  
+
   .add-dsp {
     text-decoration: underline;
     color: grey;
     margin: 9px;
     cursor: pointer;
   }
-  
+
   .remove-btn {
     width: 40px;
     flex: none;
@@ -818,70 +823,70 @@
     font-weight: 600;
     padding: 47px 33px;
   }
-  
+
   .remove-btn:hover {
     color: rgba(var(--v-theme-error), var(--v-medium-opacity));
   }
-  
+
   .swipe-left-enter-active,
   .swipe-left-leave-active {
     transition:
       transform 0.2s ease,
       opacity 0.2s ease;
   }
-  
+
   /* Starting state of the entering element (off-screen to the right) */
   .swipe-left-enter {
     transform: translateX(5%);
     opacity: 0; /* Start with opacity 0 */
   }
-  
+
   /* Final state for the leaving element (off-screen to the left) */
   .swipe-left-leave-to {
     transform: translateX(-5%);
     opacity: 0; /* Fade out */
   }
-  
+
   /* Initial state of the leaving element (on-screen) */
   .swipe-left-leave {
     transform: translateX(0);
     opacity: 1;
   }
-  
+
   .swipe-right-enter-active,
   .swipe-right-leave-active {
     transition:
       transform 0.2s ease,
       opacity 0.2s ease;
   }
-  
+
   /* Starting state of the entering element (off-screen to the right) */
   .swipe-right-enter {
     transform: translateX(-5%);
     opacity: 0; /* Start with opacity 0 */
   }
-  
+
   /* Final state for the leaving element (off-screen to the left) */
   .swipe-right-leave-to {
     transform: translateX(5%);
     opacity: 0; /* Fade out */
   }
-  
+
   /* Initial state of the leaving element (on-screen) */
   .swipe-right-leave {
     transform: translateX(0);
     opacity: 1;
   }
-  
+
   .flex {
     display: flex;
   }
-  
+
   @media (max-width: 700px) {
     .image-container {
       display: none;
     }
-  
+
     .onboarding-container {
       width: 100vw;
       height: 100vh;

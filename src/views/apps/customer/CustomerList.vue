@@ -7,17 +7,12 @@ import BaseBreadcrumb from '@/components/shared/BaseBreadcrumb.vue';
 import type { Header, Item } from 'vue3-easy-data-table';
 import 'vue3-easy-data-table/dist/style.css';
 
-const page = ref({ title: 'Customer list' });
+const page = ref({ title: 'My Deals' });
 
 const breadcrumbs = shallowRef([
   {
-    title: 'Customer',
+    title: 'My Deals',
     disabled: false,
-    href: '#'
-  },
-  {
-    title: 'List',
-    disabled: true,
     href: '#'
   }
 ]);
@@ -82,7 +77,7 @@ const dialog = ref(false);
                       <template v-slot:prepend>
                         <SvgSprite name="custom-plus" style="width: 20px; height: 20px" />
                       </template>
-                      Add customer
+                      Add deal
                     </v-btn>
                   </template>
                   <v-card>
@@ -199,7 +194,7 @@ const dialog = ref(false);
                     </perfect-scrollbar>
                   </v-card>
                 </v-dialog>
-                <v-btn icon variant="text" aria-label="download" rounded="md" size="small">
+                <v-btn v-if="false" icon variant="text" aria-label="download" rounded="md" size="small">
                   <SvgSprite name="custom-document-2" class="text-lightText" style="width: 24px; height: 24px" />
                 </v-btn>
               </div>

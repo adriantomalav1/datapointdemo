@@ -28,6 +28,7 @@ export default {
   },
   methods: {
     closeOnboardingModal(): void {
+      document.documentElement.style.overflow = 'auto'
       this.showOnboardingModal = false
     }
   }

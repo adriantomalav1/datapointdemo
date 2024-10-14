@@ -31,6 +31,11 @@ const sidebarItem: menu[] = [
     //   //   to: '/dashboard/analytics'
     //   // }
     // ]
+  },
+  {
+    title: 'My Deals',
+    icon: 'custom-dollar-square',
+    to: '/deals',
   }
   // {
   //   title: 'Components',
